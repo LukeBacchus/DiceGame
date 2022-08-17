@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/TitleScreen/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Levels/LevelPicker/LevelPicker.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/ButtonAssets/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Font/Theme128.tres" type="Theme" id=4]
+[ext_resource path="res://Sprites/Indiana_Jones_Cube.png" type="Texture" id=5]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1024, 600 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+LevelPicker = ExtResource( 2 )
+
+[node name="Background" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -456.0
+margin_top = -268.0
+margin_right = 215.0
+margin_bottom = -110.0
+theme = ExtResource( 4 )
+text = "Dice Exproller"
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -374.0
+margin_top = -52.0
+margin_right = -174.0
+margin_bottom = 193.0
+rect_min_size = Vector2( 175, 0 )
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" parent="Buttons" instance=ExtResource( 3 )]
+
+[node name="Label" parent="Buttons/Play" index="0"]
+margin_left = -3.0
+margin_top = 3.0
+margin_right = -3.0
+text = "Play"
+
+[node name="Credits" parent="Buttons" instance=ExtResource( 3 )]
+margin_top = 85.0
+margin_bottom = 160.0
+
+[node name="Label" parent="Buttons/Credits" index="0"]
+text = "Credits"
+
+[node name="Quit" parent="Buttons" instance=ExtResource( 3 )]
+margin_top = 170.0
+margin_bottom = 245.0
+
+[node name="Label" parent="Buttons/Quit" index="0"]
+text = "Quit"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 144.0
+margin_top = 240.0
+margin_right = 472.0
+margin_bottom = 568.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="button_up" from="Buttons/Play" to="." method="_on_Play_button_up"]
+[connection signal="button_up" from="Buttons/Credits" to="." method="_on_Credits_button_up"]
+[connection signal="button_up" from="Buttons/Quit" to="." method="_on_Quit_button_up"]
+
+[editable path="Buttons/Play"]
+[editable path="Buttons/Credits"]
+[editable path="Buttons/Quit"]

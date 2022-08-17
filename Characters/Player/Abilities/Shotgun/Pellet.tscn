@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Characters/Player/Abilities/Shotgun/Pellet.gd" type="Script" id=2]
+[ext_resource path="res://Font/GhoulFriAOE.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12, 12 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.152941, 0.533333, 0.266667, 0.686275 )
+border_color = Color( 0.858824, 0.945098, 0.992157, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[node name="Pellet" type="Area2D"]
+z_index = -1
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 16.0
+margin_bottom = 16.0
+custom_fonts/font = SubResource( 2 )
+text = "BOLT"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="." to="." method="_on_Pellet_body_entered"]

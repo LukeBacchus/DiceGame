@@ -1,0 +1,116 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Characters/Player/dash2.wav" type="AudioStream" id=1]
+[ext_resource path="res://Characters/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Characters/DiceLogic/DiceLogic.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Player/Abilities/Fear/Fear.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Player/Abilities/Shotgun/Shotgun.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Characters/Player/Abilities/Snare/Snare.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Characters/Player/Abilities/Mine/Mine.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Characters/Health.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Characters/Player/Abilities/Fear/fear1_favourite.wav" type="AudioStream" id=9]
+[ext_resource path="res://Characters/Player/Abilities/Snare/freeze.wav" type="AudioStream" id=10]
+[ext_resource path="res://Characters/Player/Abilities/Shotgun/shotgun_real.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sprites/Cube_roll.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/PlayerIcons/fear.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.4115, 16.0908 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8.47232, 7.53303 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Roll"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 0 ]
+}
+
+[node name="Player" type="KinematicBody2D" groups=["Player"]]
+collision_mask = 0
+script = ExtResource( 2 )
+speed = 8.0
+Mine = ExtResource( 7 )
+Shotgun = ExtResource( 5 )
+Snare = ExtResource( 6 )
+Fear = ExtResource( 4 )
+
+[node name="Health" parent="." instance=ExtResource( 8 )]
+max_hp_amount = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 12 )
+hframes = 5
+
+[node name="DiceLogic" parent="." instance=ExtResource( 3 )]
+Fear_texture = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.499993, -0.00275908 )
+shape = SubResource( 1 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 32 )
+collision_mask = 65538
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="SameSquareCollider" type="Area2D" parent="."]
+position = Vector2( -0.00551816, 0.999985 )
+collision_layer = 0
+collision_mask = 131072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SameSquareCollider"]
+position = Vector2( 5.96046e-08, 1.19209e-07 )
+shape = SubResource( 2 )
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -5.0
+
+[node name="Fear" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 9 )
+volume_db = -5.0
+
+[node name="Freeze" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 10 )
+volume_db = -5.0
+
+[node name="Gun" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+volume_db = -5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 1.5
+anims/RESET = SubResource( 4 )
+anims/Roll = SubResource( 3 )
+
+[connection signal="hp_depleted" from="Health" to="." method="die"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_started" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_started"]

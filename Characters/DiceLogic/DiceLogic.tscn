@@ -1,0 +1,164 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Characters/DiceLogic/DiceLogic.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/PlayerIcons/boot.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/PlayerIcons/snare.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/PlayerIcons/bomb.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Bright_32x32_Block.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/PlayerIcons/crosbow.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 0 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="DiceLogic" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Mine_texture = ExtResource( 4 )
+Shotgun_texture = ExtResource( 7 )
+Dash_texture = ExtResource( 2 )
+Snare_texture = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -48.0
+margin_top = -48.0
+margin_right = 48.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Left" type="Panel" parent="HBoxContainer/VBoxContainer"]
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/VBoxContainer/Left"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 20, 20 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 32.0
+margin_right = 64.0
+margin_bottom = 96.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="Up" type="Panel" parent="HBoxContainer/VBoxContainer2"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Up"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 20, 20 )
+expand = true
+
+[node name="Die" type="Panel" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 2 )
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Die"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Down" type="Panel" parent="HBoxContainer/VBoxContainer2"]
+margin_top = 64.0
+margin_right = 32.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/VBoxContainer2/Down"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 20, 20 )
+expand = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+margin_left = 64.0
+margin_right = 96.0
+margin_bottom = 96.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Right" type="Panel" parent="HBoxContainer/VBoxContainer3"]
+margin_top = 32.0
+margin_right = 32.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 32, 32 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/VBoxContainer3/Right"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 20, 20 )
+expand = true

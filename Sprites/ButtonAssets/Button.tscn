@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/ButtonAssets/Pressed.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/ButtonAssets/Text_box.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/ButtonAssets/Hovered.png" type="Texture" id=3]
+[ext_resource path="res://Font/Theme16.tres" type="Theme" id=4]
+[ext_resource path="res://Sprites/ButtonAssets/Button.gd" type="Script" id=5]
+
+[node name="Button" type="TextureButton"]
+margin_right = 200.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 200, 75 )
+theme = ExtResource( 4 )
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 1 )
+texture_hover = ExtResource( 3 )
+script = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 4 )
+text = "Text Here"
+align = 1
+valign = 1

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/shotgun_real.wav-a415ba6354399c8fc08dc362131d619c.sample"
+
+[deps]
+
+source_file="res://Characters/Player/Abilities/Shotgun/shotgun_real.wav"
+dest_files=[ "res://.import/shotgun_real.wav-a415ba6354399c8fc08dc362131d619c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

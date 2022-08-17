@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Levels/BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level_01/Level_01.gd" type="Script" id=2]
+[ext_resource path="res://Environment/Hole.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Enemy/Enemy.tscn" type="PackedScene" id=4]
+
+[node name="Level_01" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Obstacles" parent="." index="0"]
+tile_data = PoolIntArray( -65536, 7, 0, -65535, 7, 0, -65534, 7, 0, -65533, 7, 0, -65532, 7, 0, -65531, 7, 0, -65530, 7, 0, -65529, 7, 0, -65528, 7, 0, -65527, 7, 0, -65526, 7, 0, -65525, 7, 0, -65524, 7, 0, 0, 3, 0, 1, 11, 0, 2, 11, 0, 3, 11, 0, 4, 11, 0, 5, 11, 0, 6, 11, 0, 7, 11, 0, 8, 11, 0, 9, 6, 0, 10, 6, 0, 11, 6, 0, 12, 4, 0, 65536, 3, 0, 65537, 536870920, 0, 65538, 7, 0, 65539, 14, 0, 65540, 7, 0, 65541, 7, 0, 65542, 14, 0, 65543, 7, 0, 65544, 7, 0, 65548, 4, 0, 131072, 3, 0, 131073, 5, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 131079, 6, 0, 131080, 6, 0, 131081, 536870916, 0, 131084, 4, 0, 196616, 536870919, 0, 196617, 536870916, 0, 196618, 14, 0, 196619, 14, 0, 196620, 4, 0, 196621, 8, 0, 196622, 7, 0, 196623, 7, 0, 196624, 7, 0, 196625, 7, 0, 196626, 7, 0, 196627, 8, 0, 262152, 3, 0, 262153, 6, 0, 262156, 6, 0, 262157, 6, 0, 262158, 6, 0, 262159, 6, 0, 262160, 6, 0, 262161, 6, 0, 262162, 6, 0, 262163, 4, 0, 327688, 3, 0, 327689, 14, 0, 327693, 6, 0, 327694, 14, 0, 327698, 14, 0, 327699, 4, 0, 327707, 5, 0, 327708, 5, 0, 327709, 5, 0, 393224, 3, 0, 393226, 14, 0, 393227, 14, 0, 393228, 14, 0, 393229, 6, 0, 393235, 4, 0, 393243, 5, 0, 393245, 5, 0, 458760, 3, 0, 458765, 6, 0, 458767, 14, 0, 458771, 4, 0, 458779, 5, 0, 458781, 5, 0, 524296, 3, 0, 524297, 14, 0, 524298, 14, 0, 524299, 14, 0, 524301, 6, 0, 524304, 14, 0, 524306, 14, 0, 524307, 4, 0, 524315, 5, 0, 524317, 5, 0, 589832, 3, 0, 589834, 14, 0, 589836, 14, 0, 589837, 6, 0, 589838, 14, 0, 589843, 4, 0, 589851, 5, 0, 589852, 5, 0, 589853, 5, 0, 655368, 3, 0, 655370, 14, 0, 655373, 6, 0, 655377, 14, 0, 655379, 4, 0, 720904, 3, 0, 720907, 14, 0, 720908, 14, 0, 720909, 6, 0, 720911, 14, 0, 720915, 4, 0, 786440, 3, 0, 786441, 14, 0, 786450, 14, 0, 786451, 4, 0, 851976, 3, 0, 851977, 6, 0, 851978, 6, 0, 851979, 6, 0, 851980, 6, 0, 851981, 6, 0, 851982, 6, 0, 851983, 6, 0, 851984, 6, 0, 851985, 6, 0, 851986, 6, 0, 851987, 4, 0, 917512, 1610612743, 0, 917513, 1610612743, 0, 917514, 1610612743, 0, 917515, 1610612743, 0, 917516, 1610612743, 0, 917517, 1610612743, 0, 917518, 1610612743, 0, 917519, 1610612743, 0, 917520, 1610612743, 0, 917521, 1610612743, 0, 917522, 1610612743, 0, 917523, 1610612743, 0 )
+
+[node name="NonObstacles" parent="." index="1"]
+tile_data = PoolIntArray( 65537, 3, 0, 65538, 3, 0, 65540, 3, 0, 65541, 3, 0, 65543, 3, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 3, 0, 131082, 3, 0, 131083, 3, 0, 262154, 3, 0, 262155, 3, 0, 327690, 3, 0, 327691, 3, 0, 327692, 3, 0, 327695, 3, 0, 327696, 3, 0, 327697, 3, 0, 327699, 3, 0, 393225, 3, 0, 393230, 3, 0, 393231, 3, 0, 393232, 3, 0, 393233, 3, 0, 393234, 3, 0, 393235, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 3, 0, 458764, 3, 0, 458766, 3, 0, 458768, 3, 0, 458769, 3, 0, 458770, 3, 0, 458771, 3, 0, 524300, 3, 0, 524302, 3, 0, 524303, 3, 0, 524305, 3, 0, 524307, 3, 0, 589833, 3, 0, 589835, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 655369, 3, 0, 655371, 3, 0, 655372, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655378, 3, 0, 655379, 3, 0, 720905, 3, 0, 720906, 3, 0, 720910, 3, 0, 720912, 3, 0, 720913, 3, 0, 720914, 3, 0, 720915, 3, 0, 786442, 3, 0, 786443, 3, 0, 786444, 3, 0, 786445, 3, 0, 786446, 3, 0, 786447, 3, 0, 786448, 3, 0, 786449, 3, 0, 786451, 3, 0 )
+
+[node name="FinishLevelBlock" parent="." index="3"]
+position = Vector2( 528, 176 )
+
+[node name="Player" parent="." index="4"]
+position = Vector2( 48, 48 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="5"]
+position = Vector2( 352, 224 )
+offset = Vector2( 32, 0 )
+current = true
+zoom = Vector2( 0.79, 0.79 )
+
+[node name="Holes" type="Node" parent="." index="6"]
+
+[node name="Hole" parent="Holes" index="0" instance=ExtResource( 3 )]
+position = Vector2( 112, 48 )
+
+[node name="Hole2" parent="Holes" index="1" instance=ExtResource( 3 )]
+position = Vector2( 208, 48 )
+
+[node name="Hole3" parent="Holes" index="2" instance=ExtResource( 3 )]
+position = Vector2( 336, 112 )
+
+[node name="Hole4" parent="Holes" index="3" instance=ExtResource( 3 )]
+position = Vector2( 368, 112 )
+
+[node name="Hole5" parent="Holes" index="4" instance=ExtResource( 3 )]
+position = Vector2( 304, 176 )
+
+[node name="Hole6" parent="Holes" index="5" instance=ExtResource( 3 )]
+position = Vector2( 400, 208 )
+
+[node name="Hole7" parent="Holes" index="6" instance=ExtResource( 3 )]
+position = Vector2( 336, 208 )
+
+[node name="Hole8" parent="Holes" index="7" instance=ExtResource( 3 )]
+position = Vector2( 304, 272 )
+
+[node name="Hole9" parent="Holes" index="8" instance=ExtResource( 3 )]
+position = Vector2( 304, 400 )
+
+[node name="Hole13" parent="Holes" index="9" instance=ExtResource( 3 )]
+position = Vector2( 400, 368 )
+
+[node name="Hole14" parent="Holes" index="10" instance=ExtResource( 3 )]
+position = Vector2( 368, 368 )
+
+[node name="Hole15" parent="Holes" index="11" instance=ExtResource( 3 )]
+position = Vector2( 592, 272 )
+
+[node name="Hole16" parent="Holes" index="12" instance=ExtResource( 3 )]
+position = Vector2( 592, 176 )
+
+[node name="Hole17" parent="Holes" index="13" instance=ExtResource( 3 )]
+position = Vector2( 528, 272 )
+
+[node name="Hole10" parent="Holes" index="14" instance=ExtResource( 3 )]
+position = Vector2( 336, 304 )
+
+[node name="Hole11" parent="Holes" index="15" instance=ExtResource( 3 )]
+position = Vector2( 368, 272 )
+
+[node name="Hole12" parent="Holes" index="16" instance=ExtResource( 3 )]
+position = Vector2( 336, 272 )
+
+[node name="Hole18" parent="Holes" index="17" instance=ExtResource( 3 )]
+position = Vector2( 464, 176 )
+
+[node name="Hole19" parent="Holes" index="18" instance=ExtResource( 3 )]
+position = Vector2( 560, 336 )
+
+[node name="Hole20" parent="Holes" index="19" instance=ExtResource( 3 )]
+position = Vector2( 592, 400 )
+
+[node name="Hole21" parent="Holes" index="20" instance=ExtResource( 3 )]
+position = Vector2( 336, 336 )
+
+[node name="Hole25" parent="Holes" index="21" instance=ExtResource( 3 )]
+position = Vector2( 400, 304 )
+
+[node name="Hole26" parent="Holes" index="22" instance=ExtResource( 3 )]
+position = Vector2( 368, 208 )
+
+[node name="Hole27" parent="Holes" index="23" instance=ExtResource( 3 )]
+position = Vector2( 496, 240 )
+
+[node name="Hole22" parent="Holes" index="24" instance=ExtResource( 3 )]
+position = Vector2( 496, 368 )
+
+[node name="Hole23" parent="Holes" index="25" instance=ExtResource( 3 )]
+position = Vector2( 944, 208 )
+
+[node name="Hole24" parent="Holes" index="26" instance=ExtResource( 3 )]
+position = Vector2( 464, 304 )
+
+[node name="Enemy" parent="Enemies" index="0" instance=ExtResource( 4 )]
+position = Vector2( 912, 272 )
+rotation = -0.00551819

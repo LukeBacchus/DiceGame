@@ -1,0 +1,262 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Levels/Level_03/Level_03.gd" type="Script" id=1]
+[ext_resource path="res://Characters/Enemy/Skeleton/Skeleton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environment/Hole.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/BaseLevel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Characters/Enemy/Goblin/Goblin.tscn" type="PackedScene" id=5]
+
+[node name="Level_03" instance=ExtResource( 4 )]
+script = ExtResource( 1 )
+
+[node name="Obstacles" parent="." index="0"]
+tile_data = PoolIntArray( -65536, 7, 0, -65535, 7, 0, -65534, 7, 0, -65533, 7, 0, -65532, 7, 0, -65531, 7, 0, -65530, 7, 0, -65529, 7, 0, -65528, 7, 0, -65527, 7, 0, -65526, 7, 0, -65525, 7, 0, -65524, 7, 0, -65523, 7, 0, -65522, 7, 0, -65521, 7, 0, -65520, 7, 0, -65519, 7, 0, -65518, 7, 0, -65517, 7, 0, -65516, 7, 0, -65515, 7, 0, -65514, 7, 0, -65513, 8, 0, 0, 3, 0, 1, 13, 0, 2, 13, 0, 3, 13, 0, 4, 13, 0, 5, 13, 0, 6, 13, 0, 7, 13, 0, 8, 13, 0, 9, 13, 0, 10, 13, 0, 11, 13, 0, 12, 13, 0, 13, 13, 0, 14, 13, 0, 15, 13, 0, 16, 13, 0, 17, 13, 0, 18, 13, 0, 19, 13, 0, 20, 13, 0, 21, 13, 0, 22, 13, 0, 23, 4, 0, 65536, 3, 0, 65538, 7, 0, 65540, 7, 0, 65543, 7, 0, 65545, 7, 0, 65547, 13, 0, 65548, 13, 0, 65549, 13, 0, 65551, 7, 0, 65556, 13, 0, 65557, 7, 0, 65559, 4, 0, 131072, 3, 0, 131074, 13, 0, 131076, 13, 0, 131079, 13, 0, 131081, 13, 0, 131083, 13, 0, 131084, 13, 0, 131086, 7, 0, 131087, 13, 0, 131089, 7, 0, 131090, 7, 0, 131093, 13, 0, 131095, 4, 0, 196608, 3, 0, 196610, 7, 0, 196612, 7, 0, 196615, 7, 0, 196617, 7, 0, 196619, 13, 0, 196621, 7, 0, 196622, 13, 0, 196623, 13, 0, 196625, 13, 0, 196626, 13, 0, 196631, 4, 0, 262144, 3, 0, 262146, 13, 0, 262148, 13, 0, 262151, 13, 0, 262153, 13, 0, 262155, 7, 0, 262156, 8, 0, 262157, 13, 0, 262158, 13, 0, 262159, 13, 0, 262160, 7, 0, 262162, 13, 0, 262166, 7, 0, 262167, 4, 0, 327680, 3, 0, 327684, 7, 0, 327685, 8, 0, 327686, 8, 0, 327687, 8, 0, 327688, 8, 0, 327689, 8, 0, 327690, 8, 0, 327691, 13, 0, 327692, 13, 0, 327693, 13, 0, 327694, 13, 0, 327695, 13, 0, 327696, 13, 0, 327699, 7, 0, 327702, 13, 0, 327703, 4, 0, 393216, 3, 0, 393217, 5, 0, 393219, 5, 0, 393220, 5, 0, 393221, 13, 0, 393222, 13, 0, 393223, 13, 0, 393224, 13, 0, 393225, 13, 0, 393226, 13, 0, 393227, 13, 0, 393228, 13, 0, 393229, 13, 0, 393230, 13, 0, 393231, 13, 0, 393233, 7, 0, 393235, 13, 0, 393238, 13, 0, 393239, 4, 0, 458752, 3, 0, 458753, 5, 0, 458755, 5, 0, 458756, 5, 0, 458757, 13, 0, 458758, 13, 0, 458759, 13, 0, 458760, 13, 0, 458761, 13, 0, 458762, 13, 0, 458769, 13, 0, 458773, 7, 0, 458775, 4, 0, 524288, 3, 0, 524289, 7, 0, 524292, 5, 0, 524293, 13, 0, 524294, 13, 0, 524295, 13, 0, 524296, 13, 0, 524297, 13, 0, 524298, 13, 0, 524302, 14, 0, 524305, 13, 0, 524309, 13, 0, 524311, 4, 0, 589824, 3, 0, 589825, 13, 0, 589827, 13, 0, 589828, 13, 0, 589829, 13, 0, 589830, 13, 0, 589831, 13, 0, 589832, 13, 0, 589833, 13, 0, 589834, 14, 0, 589847, 4, 0, 655360, 3, 0, 655361, 13, 0, 655362, 13, 0, 655363, 13, 0, 655364, 13, 0, 655365, 13, 0, 655366, 13, 0, 655367, 13, 0, 655368, 13, 0, 655379, 7, 0, 655383, 4, 0, 720896, 3, 0, 720898, 7, 0, 720900, 13, 0, 720902, 7, 0, 720911, 14, 0, 720915, 13, 0, 720919, 4, 0, 786432, 3, 0, 786434, 13, 0, 786436, 13, 0, 786438, 13, 0, 786441, 14, 0, 786448, 7, 0, 786451, 13, 0, 786454, 7, 0, 786455, 4, 0, 851968, 3, 0, 851969, 7, 0, 851970, 13, 0, 851971, 7, 0, 851972, 7, 0, 851973, 7, 0, 851974, 13, 0, 851975, 7, 0, 851976, 7, 0, 851977, 7, 0, 851978, 7, 0, 851979, 14, 0, 851980, 7, 0, 851981, 7, 0, 851982, 7, 0, 851983, 7, 0, 851984, 13, 0, 851985, 7, 0, 851986, 7, 0, 851987, 7, 0, 851988, 7, 0, 851989, 7, 0, 851990, 13, 0, 851991, 4, 0, 917504, 3, 0, 917505, 13, 0, 917506, 13, 0, 917507, 13, 0, 917508, 13, 0, 917509, 13, 0, 917510, 13, 0, 917511, 13, 0, 917512, 13, 0, 917513, 13, 0, 917514, 13, 0, 917515, 13, 0, 917516, 13, 0, 917517, 13, 0, 917518, 13, 0, 917519, 13, 0, 917520, 13, 0, 917521, 13, 0, 917522, 13, 0, 917523, 13, 0, 917524, 13, 0, 917525, 13, 0, 917526, 13, 0, 917527, 4, 0 )
+
+[node name="NonObstacles" parent="." index="1"]
+tile_data = PoolIntArray( -851963, 3, 0, -720891, 3, 0, -655355, 3, 0, -589823, 3, 0, -589821, 3, 0, -589820, 3, 0, -589819, 3, 0, 65537, 3, 0, 65538, 3, 0, 65539, 3, 0, 65540, 3, 0, 65541, 3, 0, 65542, 3, 0, 65543, 3, 0, 65544, 3, 0, 65545, 3, 0, 65546, 3, 0, 65547, 3, 0, 65548, 3, 0, 65549, 3, 0, 65550, 3, 0, 65551, 3, 0, 65552, 3, 0, 65553, 3, 0, 65554, 3, 0, 65555, 3, 0, 65556, 3, 0, 65557, 3, 0, 65558, 3, 0, 131073, 3, 0, 131074, 3, 0, 131075, 3, 0, 131076, 3, 0, 131077, 3, 0, 131078, 3, 0, 131079, 3, 0, 131080, 3, 0, 131081, 3, 0, 131082, 3, 0, 131083, 3, 0, 131084, 3, 0, 131085, 3, 0, 131086, 3, 0, 131087, 3, 0, 131088, 3, 0, 131089, 3, 0, 131090, 3, 0, 131091, 3, 0, 131092, 3, 0, 131093, 3, 0, 131094, 3, 0, 196609, 3, 0, 196610, 3, 0, 196611, 3, 0, 196612, 3, 0, 196613, 3, 0, 196614, 3, 0, 196615, 3, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0, 196619, 3, 0, 196620, 3, 0, 196621, 3, 0, 196622, 3, 0, 196623, 3, 0, 196624, 3, 0, 196625, 3, 0, 196626, 3, 0, 196627, 3, 0, 196628, 3, 0, 196629, 3, 0, 196630, 3, 0, 262145, 3, 0, 262146, 3, 0, 262147, 3, 0, 262148, 3, 0, 262149, 3, 0, 262150, 3, 0, 262151, 3, 0, 262152, 3, 0, 262153, 3, 0, 262154, 3, 0, 262155, 3, 0, 262156, 3, 0, 262157, 3, 0, 262158, 3, 0, 262159, 3, 0, 262160, 3, 0, 262161, 3, 0, 262162, 3, 0, 262163, 3, 0, 262164, 3, 0, 262165, 3, 0, 262166, 3, 0, 327681, 3, 0, 327682, 3, 0, 327683, 3, 0, 327684, 3, 0, 327685, 3, 0, 327686, 3, 0, 327687, 3, 0, 327688, 3, 0, 327689, 3, 0, 327690, 3, 0, 327691, 3, 0, 327692, 3, 0, 327693, 3, 0, 327694, 3, 0, 327695, 3, 0, 327696, 3, 0, 327697, 3, 0, 327698, 3, 0, 327699, 3, 0, 327700, 3, 0, 327701, 3, 0, 327702, 3, 0, 393217, 3, 0, 393218, 3, 0, 393219, 3, 0, 393220, 3, 0, 393221, 3, 0, 393222, 3, 0, 393223, 3, 0, 393224, 3, 0, 393225, 3, 0, 393226, 3, 0, 393227, 3, 0, 393228, 3, 0, 393229, 3, 0, 393230, 3, 0, 393231, 3, 0, 393232, 3, 0, 393233, 3, 0, 393234, 3, 0, 393235, 3, 0, 393236, 3, 0, 393237, 3, 0, 393238, 3, 0, 458753, 3, 0, 458754, 3, 0, 458755, 3, 0, 458756, 3, 0, 458757, 3, 0, 458758, 3, 0, 458759, 3, 0, 458760, 3, 0, 458761, 3, 0, 458762, 3, 0, 458763, 3, 0, 458764, 3, 0, 458765, 3, 0, 458766, 3, 0, 458767, 3, 0, 458768, 3, 0, 458769, 3, 0, 458770, 3, 0, 458771, 3, 0, 458772, 3, 0, 458773, 3, 0, 458774, 3, 0, 524289, 3, 0, 524290, 3, 0, 524291, 3, 0, 524292, 3, 0, 524293, 3, 0, 524294, 3, 0, 524295, 3, 0, 524296, 3, 0, 524297, 3, 0, 524298, 3, 0, 524299, 3, 0, 524300, 3, 0, 524301, 3, 0, 524302, 3, 0, 524303, 3, 0, 524304, 3, 0, 524305, 3, 0, 524306, 3, 0, 524307, 3, 0, 524308, 3, 0, 524309, 3, 0, 524310, 3, 0, 589825, 3, 0, 589826, 3, 0, 589827, 3, 0, 589828, 3, 0, 589829, 3, 0, 589830, 3, 0, 589831, 3, 0, 589832, 3, 0, 589833, 3, 0, 589834, 3, 0, 589835, 3, 0, 589836, 3, 0, 589837, 3, 0, 589838, 3, 0, 589839, 3, 0, 589840, 3, 0, 589841, 3, 0, 589842, 3, 0, 589843, 3, 0, 589844, 3, 0, 589845, 3, 0, 589846, 3, 0, 655361, 3, 0, 655362, 3, 0, 655363, 3, 0, 655364, 3, 0, 655365, 3, 0, 655366, 3, 0, 655367, 3, 0, 655368, 3, 0, 655369, 3, 0, 655370, 3, 0, 655371, 3, 0, 655372, 3, 0, 655373, 3, 0, 655374, 3, 0, 655375, 3, 0, 655376, 3, 0, 655377, 3, 0, 655378, 3, 0, 655379, 3, 0, 655380, 3, 0, 655381, 3, 0, 655382, 3, 0, 720897, 3, 0, 720898, 3, 0, 720899, 3, 0, 720900, 3, 0, 720901, 3, 0, 720902, 3, 0, 720903, 3, 0, 720904, 3, 0, 720905, 3, 0, 720906, 3, 0, 720907, 3, 0, 720908, 3, 0, 720909, 3, 0, 720910, 3, 0, 720911, 3, 0, 720912, 3, 0, 720913, 3, 0, 720914, 3, 0, 720915, 3, 0, 720916, 3, 0, 720917, 3, 0, 720918, 3, 0, 786433, 3, 0, 786434, 3, 0, 786435, 3, 0, 786436, 3, 0, 786437, 3, 0, 786438, 3, 0, 786439, 3, 0, 786440, 3, 0, 786441, 3, 0, 786442, 3, 0, 786443, 3, 0, 786444, 3, 0, 786445, 3, 0, 786446, 3, 0, 786447, 3, 0, 786448, 3, 0, 786449, 3, 0, 786450, 3, 0, 786451, 3, 0, 786452, 3, 0, 786453, 3, 0, 786454, 3, 0, 851969, 3, 0, 851970, 3, 0, 851971, 3, 0, 851972, 3, 0, 851973, 3, 0, 851974, 3, 0, 851975, 3, 0, 851976, 3, 0, 851977, 3, 0, 851978, 3, 0, 851979, 3, 0, 851980, 3, 0, 851981, 3, 0, 851982, 3, 0, 851983, 3, 0, 851984, 3, 0, 851985, 3, 0, 851986, 3, 0, 851987, 3, 0, 851988, 3, 0, 851989, 3, 0, 851990, 3, 0 )
+
+[node name="FinishLevelBlock" parent="." index="3"]
+position = Vector2( 48, 432 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+position = Vector2( 352, 205 )
+offset = Vector2( 32, 32 )
+current = true
+zoom = Vector2( 0.85, 0.85 )
+
+[node name="Player" parent="." index="5"]
+position = Vector2( 80, 304 )
+
+[node name="Holes" type="Node" parent="." index="6"]
+
+[node name="Hole" parent="Holes" index="0" instance=ExtResource( 3 )]
+position = Vector2( 336, 304 )
+
+[node name="Hole2" parent="Holes" index="1" instance=ExtResource( 3 )]
+position = Vector2( 496, 368 )
+
+[node name="Hole3" parent="Holes" index="2" instance=ExtResource( 3 )]
+position = Vector2( 304, 400 )
+
+[node name="Hole8" parent="Holes" index="3" instance=ExtResource( 3 )]
+position = Vector2( 464, 272 )
+
+[node name="Hole6" parent="Holes" index="4" instance=ExtResource( 3 )]
+position = Vector2( 368, 432 )
+
+[node name="Skeleton9" parent="Enemies" index="0" instance=ExtResource( 2 )]
+position = Vector2( 80, 240 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 0, 0, 2, 2 ]
+
+[node name="Skeleton13" parent="Enemies" index="1" instance=ExtResource( 2 )]
+position = Vector2( 80, 176 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 2, 2, 0, 0 ]
+
+[node name="Skeleton2" parent="Enemies" index="2" instance=ExtResource( 2 )]
+position = Vector2( 272, 48 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 2, 2, 2, 2, 0, 0, 0, 0 ]
+
+[node name="Skeleton5" parent="Enemies" index="3" instance=ExtResource( 2 )]
+position = Vector2( 176, 48 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 2, 2, 2, 2, 0, 0, 0, 0 ]
+
+[node name="Skeleton6" parent="Enemies" index="4" instance=ExtResource( 2 )]
+position = Vector2( 48, 48 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 2, 2, 2, 2, 0, 0, 0, 0 ]
+
+[node name="Skeleton14" parent="Enemies" index="5" instance=ExtResource( 2 )]
+position = Vector2( 624, 48 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 2, 2, 2, 2, 0, 0, 0, 0 ]
+
+[node name="Skeleton25" parent="Enemies" index="6" instance=ExtResource( 2 )]
+position = Vector2( 496, 48 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 1, 2, 1, 2, 1, 2, 1, 3, 0, 3, 0, 3, 0, 3 ]
+
+[node name="Skeleton19" parent="Enemies" index="7" instance=ExtResource( 2 )]
+position = Vector2( 656, 80 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 2, 2, 2, 2, 0, 0, 0, 0 ]
+
+[node name="Skeleton20" parent="Enemies" index="8" instance=ExtResource( 2 )]
+position = Vector2( 688, 112 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 2, 2, 2, 2, 0, 0, 0, 0 ]
+
+[node name="Skeleton16" parent="Enemies" index="9" instance=ExtResource( 2 )]
+position = Vector2( 528, 208 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 2, 2, 2, 2, 0, 0, 0, 0 ]
+
+[node name="Skeleton22" parent="Enemies" index="10" instance=ExtResource( 2 )]
+position = Vector2( 592, 240 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 3, 3, 2, 1, 1, 0 ]
+
+[node name="Skeleton17" parent="Enemies" index="11" instance=ExtResource( 2 )]
+position = Vector2( 400, 240 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 2, 2, 2, 2, 0, 0, 0, 0 ]
+
+[node name="Skeleton7" parent="Enemies" index="12" instance=ExtResource( 2 )]
+position = Vector2( 112, 176 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 0, 0, 0, 0, 2, 2, 2, 2 ]
+
+[node name="Skeleton8" parent="Enemies" index="13" instance=ExtResource( 2 )]
+position = Vector2( 208, 176 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 0, 0, 0, 0, 2, 2, 2, 2 ]
+
+[node name="Skeleton15" parent="Enemies" index="14" instance=ExtResource( 2 )]
+position = Vector2( 528, 400 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 0, 0, 0, 0, 2, 2, 2, 2 ]
+
+[node name="Skeleton18" parent="Enemies" index="15" instance=ExtResource( 2 )]
+position = Vector2( 400, 432 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 0, 0, 0, 0, 2, 2, 2, 2 ]
+
+[node name="Skeleton10" parent="Enemies" index="16" instance=ExtResource( 2 )]
+position = Vector2( 336, 176 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 0, 0, 0, 0, 2, 2, 2, 2 ]
+
+[node name="Skeleton3" parent="Enemies" index="17" instance=ExtResource( 2 )]
+position = Vector2( 336, 176 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3 ]
+
+[node name="Skeleton11" parent="Enemies" index="18" instance=ExtResource( 2 )]
+position = Vector2( 720, 304 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3 ]
+
+[node name="Skeleton12" parent="Enemies" index="19" instance=ExtResource( 2 )]
+position = Vector2( 688, 336 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3 ]
+
+[node name="Skeleton4" parent="Enemies" index="20" instance=ExtResource( 2 )]
+position = Vector2( 336, 48 )
+scale = Vector2( 1.25, 1.25 )
+max_enemy_actions = 2
+ai_type = 2
+preset_moves = [ 1, 1, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 3 ]
+
+[node name="Goblin" parent="." index="9" instance=ExtResource( 5 )]
+position = Vector2( 48, 400 )
+ai_type = 2
+preset_moves = [ 0, 3, 3, 2, 2, 3, 3, 0, 0, 2, 2, 1, 1, 0, 0, 1, 1, 2 ]
+
+[node name="Goblin2" parent="." index="10" instance=ExtResource( 5 )]
+position = Vector2( 176, 368 )
+ai_type = 2
+preset_moves = [ 2, 2, 1, 1, 0, 0, 1, 1, 2, 0, 3, 3, 2, 2, 3, 3, 0, 0 ]
+
+[node name="Goblin4" parent="." index="11" instance=ExtResource( 5 )]
+position = Vector2( 80, 272 )
+ai_type = 2
+preset_moves = [ 1, 3 ]
+
+[node name="Goblin5" parent="." index="12" instance=ExtResource( 5 )]
+position = Vector2( 112, 272 )
+ai_type = 2
+preset_moves = [ 1, 3 ]
+
+[node name="Goblin6" parent="." index="13" instance=ExtResource( 5 )]
+position = Vector2( 560, 176 )
+ai_type = 2
+preset_moves = [ 3, 2, 1, 0 ]
+
+[node name="Goblin7" parent="." index="14" instance=ExtResource( 5 )]
+position = Vector2( 528, 48 )
+ai_type = 2
+preset_moves = [ 3, 2, 1, 0 ]
+
+[node name="Goblin15" parent="." index="15" instance=ExtResource( 5 )]
+position = Vector2( 656, 336 )
+ai_type = 2
+preset_moves = [ 3, 2, 1, 0 ]
+
+[node name="Goblin17" parent="." index="16" instance=ExtResource( 5 )]
+position = Vector2( 368, 240 )
+ai_type = 2
+preset_moves = [ 3, 2, 1, 0 ]
+
+[node name="Goblin14" parent="." index="17" instance=ExtResource( 5 )]
+position = Vector2( 496, 48 )
+ai_type = 2
+preset_moves = [ 1, 2, 1, 2, 1, 2, 1, 3, 0, 3, 0, 3, 0, 3 ]
+
+[node name="Goblin8" parent="." index="18" instance=ExtResource( 5 )]
+position = Vector2( 560, 48 )
+ai_type = 2
+preset_moves = [ 3, 2, 1, 0 ]
+
+[node name="Goblin9" parent="." index="19" instance=ExtResource( 5 )]
+position = Vector2( 656, 208 )
+ai_type = 2
+preset_moves = [ 3, 2, 1, 0 ]
+
+[node name="Goblin10" parent="." index="20" instance=ExtResource( 5 )]
+position = Vector2( 560, 368 )
+ai_type = 2
+preset_moves = [ 3, 2, 1, 0 ]
+
+[node name="Goblin12" parent="." index="21" instance=ExtResource( 5 )]
+position = Vector2( 432, 304 )
+ai_type = 2
+preset_moves = [ 3, 2, 1, 0 ]
+
+[node name="Goblin13" parent="." index="22" instance=ExtResource( 5 )]
+position = Vector2( 240, 368 )
+ai_type = 2
+preset_moves = [ 3, 2, 1, 0 ]

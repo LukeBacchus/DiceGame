@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="World" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 443.0
+margin_top = 268.0
+margin_right = 483.0
+margin_bottom = 282.0
+text = "There is no game!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

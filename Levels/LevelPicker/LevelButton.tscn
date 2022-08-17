@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="LevelButton" type="Button"]
+margin_right = 125.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 125, 60 )
+text = "Level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
